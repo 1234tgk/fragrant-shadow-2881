@@ -27,5 +27,8 @@ async def on_message(message):
     elif message.content.startswith("!time"):
         await commands.time(message)
 
+    elif message.content.startswith("!help"):
+        await commands.help_me(message)
+
 
 client.run(token)
