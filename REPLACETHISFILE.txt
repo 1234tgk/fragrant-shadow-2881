@@ -1,0 +1,3 @@
+# Rename this file to .env
+# And copy and overwrite <--YOUR TOKEN HERE--> (inside the double quote) with the bot token distributed by Discord
+discord-token="<--YOUR TOKEN HERE-->"
