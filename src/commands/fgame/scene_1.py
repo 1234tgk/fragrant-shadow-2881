@@ -93,7 +93,7 @@ class Scene1(Scene):
         elif self.input == self.choice_2.keyword_trigger:
             await self.choice_2.prompt_choice()
             await self.play_choice_2()
-        elif self.input == "!game":
+        elif self.input == "!game" or self.input == "!end":
             await AbruptEndScene(self.client, self.message).play()
         else:
             await self.mention()
@@ -115,7 +115,7 @@ class Scene1(Scene):
                 "'Will you take the only chance you have?'"
             )
             await self.play_choice_1()
-        elif self.choice_1.input == "!game":
+        elif self.choice_1.input == "!game" or self.choice_1.input == "!end":
             await AbruptEndScene(self.client, self.message).play()
         else:
             await self.mention()
@@ -136,7 +136,7 @@ class Scene1(Scene):
                 "You cannot make out whatever is coming from the abyss."
             )
             await self.play_choice_2()
-        elif self.choice_2.input == "!game":
+        elif self.choice_2.input == "!game" or self.choice_2.input == "!end":
             await AbruptEndScene(self.client, self.message).play()
         else:
             await self.mention()

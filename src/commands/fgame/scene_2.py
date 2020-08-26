@@ -76,7 +76,7 @@ class Scene2(Scene):
         elif self.input == self.choice_2.keyword_trigger:
             await self.choice_2.prompt_choice()
             await self.play_choice_2()
-        elif self.input == "!game":
+        elif self.input == "!game" or self.input == "!end":
             await AbruptEndScene(self.client, self.message).play()
         else:
             await self.mention()
@@ -88,11 +88,11 @@ class Scene2(Scene):
         await self.choice_1.prompt_options()
         if self.choice_1.input == "!back":
             await self.mention()
-            await self.message.send.channel("You back away from the portal")
+            await self.message.channel.send("You back away from the portal.")
             await self.prompt_options()
         elif self.choice_1.input == self.choice_1.keyword_advance:
             await self.choice_1.next_scene.play()
-        elif self.choice_1.input == "!game":
+        elif self.choice_1.input == "!game" or self.choice_1.input == "!end":
             await AbruptEndScene(self.client, self.message).play()
         else:
             await self.mention()
@@ -104,11 +104,11 @@ class Scene2(Scene):
         await self.choice_2.prompt_options()
         if self.choice_2.input == "!back":
             await self.mention()
-            await self.message.send.channel("You back away from the abyss for your own sake.")
+            await self.message.channel.send("You back away from the abyss for your own sake.")
             await self.prompt_options()
         elif self.choice_2.input == self.choice_2.keyword_advance:
             await self.choice_2.next_scene.play()
-        elif self.choice_2.input == "!game":
+        elif self.choice_2.input == "!game" or self.choice_2.input == "!end":
             await AbruptEndScene(self.client, self.message).play()
         else:
             await self.mention()
