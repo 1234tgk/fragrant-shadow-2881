@@ -30,5 +30,7 @@ async def on_message(message):
     elif message.content.startswith("!help"):
         await commands.help_me(message)
 
+    elif message.content.startswith("!game"):
+        await commands.game(client, message)
 
 client.run(token)
